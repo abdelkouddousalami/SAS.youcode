@@ -8,7 +8,7 @@ int main() {
     scanf("%f",&b);
     printf("veuillez entrer trioxieme nomber : ");
     scanf("%f",&c);
-        moyenne = pow((a*b*c),1/3);
+        moyenne = pow((a*b*c),1.0/3.0);
         printf("\n");
             printf("\nla moyenne geometrique de %.2f et %.2f et %.2f est : %.2f\n",a,b,c,moyenne);
 
