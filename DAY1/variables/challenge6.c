@@ -23,6 +23,7 @@ int main() {
              }else{
                 printf("%.2f / %.2f = %.2f",a,b,a/b);
             }
+            break;
         }
         printf("\n");
 return 0;
