@@ -2,7 +2,7 @@
 #include <math.h>
 
 int main() {
-    double a, b, c, delta, l7eel1, l7eel2, equatio;
+    double a, b, c, delta, l7eel1, l7eel2;
 
     printf("entrez le coefficient a 'note : a!=0': ");
         scanf("%lf",&a);
