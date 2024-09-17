@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 #define MAX 100
 char *nom[MAX];
 char *numero[MAX];
@@ -137,36 +138,46 @@ int count = 0;
     printf("Contact not found!\n");
 }
     void Delete(){
-        char nom2[MAX];
-    printf("entere nom de contact pour supprimer: ");
-    fgets(nom2,MAX, stdin);
+
+    char nom2[MAX];
+    printf("enter nom pour suprimmer: ");
+    fgets(nom2, MAX, stdin);
     nom2[strcspn(nom2, "\n")] = '\0';
 
-    int i,j;
-     for (int i = 0; i < count; i++) {
+    int i, j;
+    for (i = 0; i < count; i++) {
         if (strcmp(nom[i], nom2) == 0) {
-            for (int j = i; j < count - 1; j++) {
+            free(nom[i]);
+            free(numero[i]);
+            free(adress[i]);
+
+            for (j = i; j < count - 1; j++) {
                 nom[j] = nom[j + 1];
+                numero[j] = numero[j + 1];
+                adress[j] = adress[j + 1];
             }
+
             count--;
-            printf("contact suprimmer successfully\n");
+            printf("contact deleted successfully\n");
             return;
         }
     }
-    printf("contact non trouver \n");
+    printf("Contact non trouver\n");
 }
 
-    void Display(){
-        int i,n=1;
+   void Display() {
+    int i, n = 1;
 
-            printf("\n");
-        for(i=0; i<=count; i++){
-            printf("utilisateur %d\n\n",n++);
-            printf(" nom          : %s\n",nom[i]);
-            printf(" numero       : %s\n",numero[i]);
-            printf(" adress email : %s\n",adress[i]);
-        }
+    printf("\n");
+    for (i = 0; i < count; i++) {
+        printf("Utilisateur %d\n\n", n++);
+        printf("Nom          : %s\n", nom[i]);
+        printf("Numero       : %s\n", numero[i]);
+        printf("Adresse email: %s\n", adress[i]);
+        printf("\n");
     }
+}
+
     int main() {
         int a;
 
