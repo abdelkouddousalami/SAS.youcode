@@ -4,13 +4,19 @@ typedef struct information {
     char nom[50];
     char prenom[50];
     int age;
-
-}information;
+} information;
 
 int main() {
-    information persone = {.nom = "EL ALAMI", .prenom = "AbdElkouddous" , .age = 23};
+    information personne;
+    printf("entrez votre nom: ");
+    gets(personne.nom);
 
-        printf(" nom est : %s \n prenom est : %s \n age est : %d",persone.nom,persone.prenom,persone.age);
+    printf("entrez votre prenom: ");
+    gets(personne.prenom);
+
+    printf("entrez votre age: ");
+    scanf("%d", &personne.age);
+    printf("\nnom: %s\nprenom: %s\nage: %d\n", personne.nom, personne.prenom, personne.age);
 
     return 0;
 }
