@@ -1,19 +1,30 @@
 #include <stdio.h>
 
-typedef struct information {
+typedef struct notes {
     char nom[50];
     char prenom[50];
     int note[10];
-
-}information;
+} notes;
 
 int main() {
-    information notes = {.nom = "EL ALAMI", .prenom = "Abdelkouddous", .note = {20,20,17,18,16,19,20,16,14,16} };
+    notes etudiant;
+    printf("entrez votre nom: ");
+    gets(etudiant.nom);
 
-   printf(" nom est : %s \n prenom est : %s \n notes : ",notes.nom,notes.prenom);
-   for (int i =0 ; i<10; i++){
-    printf("%d ",notes.note[i]);
-   }
+    printf("entrez votre prenom: ");
+    gets(etudiant.prenom);
+
+    printf("entrez votre note: \n");
+    for (int i =0; i<10; i++){
+            printf("note%d : ",i+1);
+    scanf("%d",&etudiant.note[i]);
+    }
+    printf("\nnom: %s\nprenom: %s\n", etudiant.nom, etudiant.prenom);
+    printf("notes : ");
+    for(int i =0; i<10; i++){
+        printf("%d ",etudiant.note[i]);
+    }
+
 
     return 0;
 }
